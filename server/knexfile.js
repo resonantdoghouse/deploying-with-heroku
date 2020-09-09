@@ -11,6 +11,10 @@ module.exports = {
       charset: 'utf8',
     },
   },
+  staging: {
+    client: 'mysql',
+    connection: process.env.JAWSDB_URL,
+  },
   production: {
     client: 'mysql',
     connection: process.env.JAWSDB_URL,

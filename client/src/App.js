@@ -3,11 +3,6 @@ import axios from 'axios';
 import Warehouse from './components/Warehouse';
 import './App.css';
 
-const API_URL =
-  process.env.NODE_ENV === 'production'
-    ? 'https://deploying-with-heroku.herokuapp.com'
-    : 'http://localhost:5000';
-
 class App extends Component {
   state = {
     warehouses: [],
@@ -19,7 +14,7 @@ class App extends Component {
 
   getData = () => {
     axios
-      .get(`${API_URL}/api/warehouse`)
+      .get('/api/warehouse')
       .then((response) => {
         this.setState({
           warehouses: response.data,
